@@ -5,7 +5,8 @@
       "bundler": "metro"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      "expo-font"
     ],
     "name": "Jobs-finder-mobile-app",
     "slug": "Jobs-finder-mobile-app"

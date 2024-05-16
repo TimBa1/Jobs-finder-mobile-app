@@ -2,8 +2,8 @@ import { View, Text, SafeAreaView } from 'react-native'
 import { COLORS, SIZES } from '../constants/theme'
 import { Stack, useRouter } from 'expo-router'
 import ScreenHeaderBtn from '../components/common/header/ScreenHeaderBtn'
-import { icons } from '../constants'
-import { ScrollView } from 'react-native-web'
+import { icons, images } from '../constants'
+import { ScrollView } from 'react-native'
 import Welcome from '../components/home/welcome/Welcome'
 import Popularjobs from '../components/home/popular/Popularjobs'
 import Nearbyjobs from '../components/home/nearby/Nearbyjobs'
@@ -11,24 +11,24 @@ import Nearbyjobs from '../components/home/nearby/Nearbyjobs'
 const Home = () => {
     const router = useRouter()
     return (
-        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
+        <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite, }}>
             <Stack.Screen
                 options={{
-                    headerStyle: { backgroundColor: COLORS.lightWhite}, headerShadowVisible: false,
-                    headerLeft: () => ( <ScreenHeaderBtn iconUrl={icons.menu}  dimension='60%' /> ),
+                    headerStyle: { backgroundColor: COLORS.lightWhite, padding: SIZES.medium }, headerShadowVisible: false,
+                    headerLeft: () => (<ScreenHeaderBtn iconUrl={icons.menu} dimension='60%' />),
 
-                    headerRight: () => ( <ScreenHeaderBtn iconUrl={icons.profile} dimension='100%' /> ),
+                    headerRight: () => (<ScreenHeaderBtn iconUrl={images.profile} dimension='100%' />),
 
                     headerTitle: ""
                 }}
             />
-<ScrollView showsVerticalScrollIndicator={false}>
-    <View style={{flex:1, padding:SIZES.medium}}>
-        <Welcome/>
-        <Popularjobs/>
-        <Nearbyjobs/>
-    </View>
-</ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={{ flex: 1, padding: SIZES.medium }}>
+                    <Welcome />
+                    <Popularjobs />
+                    <Nearbyjobs />
+                </View>
+            </ScrollView>
 
         </SafeAreaView>
     )
